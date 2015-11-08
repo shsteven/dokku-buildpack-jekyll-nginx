@@ -68,7 +68,7 @@ fi
 
 echo "-----> Building Jekyll site"
 cd $BUILD_DIR
-$BUILD_DIR/.gems/bin/bundle install | indent
+$BUILD_DIR/.gems/bin/bundle install --binstubs=$BUILD_DIR/.gems/bin --path=$BUILD_DIR/.gems | indent
 $BUILD_DIR/.gems/bin/jekyll build | indent
 if [ -f sass/style.scss ] ; then
   $BUILD_DIR/.gems/bin/sass sass/style.scss style.css | indent
